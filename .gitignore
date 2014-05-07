@@ -1,5 +1,4 @@
 *.py[co]
 virtualenv.py[co]
-instance
 pyenv
 tmp
