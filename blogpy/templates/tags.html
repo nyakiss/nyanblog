@@ -1,0 +1,12 @@
+﻿<aside>
+{% if tags %}
+	<ul class="tag-cloud">
+{% set min_size=0.75 %}
+{% set max_size=1.75 %}
+{% for tag in tags %}
+{% set size = calculate_tag_size(tag.count, tags_min, tags_spread, min_size) %}
+		<li title="{{ tag.count }}">{% if 'tag_%s' % tag.id != active_page %}<a href="{{ url_for('tag', id=tag.name) }}">{{ tag }}</a>{% else %}<div class="tag">{{ tag }}</div>{% endif %}
+{% endfor %}
+	</ul>
+{% endif %}
+</aside>

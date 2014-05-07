@@ -1,0 +1,89 @@
+{% set time_format = 'dd.MM.y HH:mm' %}
+{% macro render_post(post, full=False) %}
+<article class="post" id="{{ 'post_%s' % post.id }}">
+	<div class="post-header">
+		<a  itemprop="title" class="title" href="{{ url_for('post', id=post.id) }}">
+{% if full %}
+{{ post.title }}
+{% else %}
+			<h1>{{ post.title }}</h1>
+{% endif %}
+		</a>
+{% if g.user and g.user.can_write %}
+		<div class="admin-bar">
+			<a class="edit" data-icon="&#xe601;" title="редактировать сообщение" href="{{ url_for('edit', id=post.id) }}"></a>
+			<a class="edit" data-icon="&#xe609;" title="удалить сообщение" href="{{ url_for('delete', id=post.id, type='post') }}{% if not full %}?next={{ request.path }}{% endif %}"></a>
+		</div>
+{% endif %}
+	</div>
+	<div class="post-body">
+{% if full or not post.summary %}
+{{ post.body }}
+{% else %}
+	<p itemprop="description">{{ post.summary }}</p>
+{% endif %}
+	</div>
+	<div class="post-footer">
+		<div class="tags" data-icon="&#xe607;">{{ post|render_tags(delimiter=' ') }}</div>
+		<a class="post-comments" data-icon="&#xe608;" href="{{ url_for('post', id=post.id) }}">{{ post.comment_count }}</a>
+		<span itemprop="published" class="date" title="{{ post.published|format_datetime(time_format) }}">{{ post.published|timesince(time_format) }}</span>
+	</div>
+</article>
+{% if full %}
+{% if g.user %}
+{% if g.user.can_comment %}
+{% for error in form.text.errors %}<p id=error>{{ error }}</p>{% endfor %}
+<form method=post class=reply>
+	{{ form.hidden_tag() }}
+	{{ form.text(placeholder=_("Comment"), rows=8) }}
+	<input class="btn btn-primary" type=submit value="{{ _('Send') }}">
+</form>
+{% else %}
+<p id=error>{{ _("You can't comment this post") }}</p>
+{% endif %}
+{% else %}
+<a class="alert" href="{{ url_for('login', next=request.path) }}">{{ _("Login to comment this post") }}</a>
+{% endif %}
+{% for comment in post.comments %}
+<article class=comment id="{{ 'comment_%s' % comment.id }}">
+	<img class="polaroid" alt="{{ comment.author }}" src="{{ comment.author.avatar() }}">
+	<div class="comment-wrap">
+		<div class="comment-header">
+			<p itemprop="nickname" class="comment-name">{{ comment.author }}:</p>
+			{% if g.user and g.user.can_write %}
+			<div class="admin-bar">
+				<a class="edit" data-icon="&#xe609;" title="удалить коментарий" href="{{ url_for('delete', id=comment.id, type='comment') }}?next={{ request.path }}"></a>
+			</div>
+			{% endif %}
+		</div>
+		<p class="comment-text">{{ comment.text|comment_filter|urlize(40, true)  }}</p>
+	</div>
+	<span class="date" title="{{ comment.timestamp|format_datetime(time_format) }}">{{ comment.timestamp|timesince(time_format) }}</span>
+</article>
+{% endfor %}
+{% endif %}
+{% endmacro %}
+
+{% macro render_pagination(pagination) %}
+	{% if pagination.has_prev or pagination.has_next %}
+		<div class=pagination>
+		{% if pagination.has_prev %}
+			<a href="{{ url_for_other_page(pagination.page - 1) }}">{{ _("&laquo; Prev") }}</a>
+		{% endif %}
+		{%- for page in pagination.iter_pages() %}
+			{% if page %}
+				{% if page != pagination.page %}
+					<a href="{{ url_for_other_page(page) }}">{{ page }}</a>
+				{% else %}
+					<a class="this">{{ page }}</a>
+				{% endif %}
+			{% else %}
+				<span class=ellipsis>…</span>
+			{% endif %}
+		{%- endfor %}
+		{% if pagination.has_next %}
+			<a href="{{ url_for_other_page(pagination.page + 1) }}">{{ _("Next &raquo;") }}</a>
+		{% endif %}
+		</div>
+	{% endif %}
+{% endmacro %}

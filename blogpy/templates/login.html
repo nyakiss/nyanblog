@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% set active_page = 'login' %}
+
+{% block title %}{{ _("Login") }}{% endblock %}
+
+{% block body %}
+<section class="posts">
+	<div id="uLogin" class="center"></div>
+	<script src="{{ ulogin_url() }}"></script>
+</section>
+{% endblock %}

@@ -1,0 +1,143 @@
+# Translations template for PROJECT.
+# Copyright (C) 2011 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2011-12-25 02:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: context.py:70
+#, python-format
+msgid "%(num)s day ago"
+msgid_plural "%(num)s days ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: context.py:75
+#, python-format
+msgid "%(num)s hour ago"
+msgid_plural "%(num)s hours ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: context.py:80
+#, python-format
+msgid "%(num)s minute ago"
+msgid_plural "%(num)s minutes ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: context.py:85
+#, python-format
+msgid "%(num)s second ago"
+msgid_plural "%(num)s seconds ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: context.py:92
+msgid "just now"
+msgstr ""
+
+#: forms.py:23 templates/new.html:31
+msgid "Title"
+msgstr ""
+
+#: forms.py:24 forms.py:29
+msgid "Text"
+msgstr ""
+
+#: forms.py:25 templates/new.html:32
+msgid "Tags"
+msgstr ""
+
+#: forms.py:30
+msgid "Field must be between 5 and 256 characters long."
+msgstr ""
+
+#: templates/_post.html:16
+msgid "Read more"
+msgstr ""
+
+#: templates/_post.html:20
+msgid "Edit"
+msgstr ""
+
+#: templates/_post.html:21
+msgid "Delete"
+msgstr ""
+
+#: templates/_post.html:47
+msgid "Comment"
+msgstr ""
+
+#: templates/_post.html:48
+msgid "Send"
+msgstr ""
+
+#: templates/_post.html:51
+msgid "You can't comment this post"
+msgstr ""
+
+#: templates/_post.html:55
+msgid "Login to comment this post"
+msgstr ""
+
+#: templates/_post.html:65
+msgid "&laquo; Prev"
+msgstr ""
+
+#: templates/_post.html:80
+msgid "Next &raquo;"
+msgstr ""
+
+#: templates/about.html:5
+msgid "About"
+msgstr ""
+
+#: templates/layout.html:2
+msgid "en"
+msgstr ""
+
+#: templates/layout.html:5
+msgid "Blog"
+msgstr ""
+
+#: templates/list.html:6
+msgid "Main page"
+msgstr ""
+
+#: templates/list.html:13
+msgid "No any messages yet"
+msgstr ""
+
+#: templates/login.html:5
+msgid "Login"
+msgstr ""
+
+#: templates/new.html:5
+msgid "New post"
+msgstr ""
+
+#: templates/new.html:33
+msgid "Message"
+msgstr ""
+
+#: templates/new.html:34
+msgid "Save"
+msgstr ""
+
+#: templates/new.html:37
+msgid "Syntax documentation"
+msgstr ""
+

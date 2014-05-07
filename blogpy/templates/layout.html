@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ _('en') }}">
+<head>
+	<meta charset="utf-8">
+	<meta name="google-site-verification" content="bmAPVrfrO_P38HQiEz71nJgE6qVcYqEHcwgP-3Cnu-c" />
+	<meta content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no" name="viewport">
+	<title>{% block title %}{% endblock %} — {{ config.SITE_TITLE or _("Blog") }}</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+	<link rel="alternate" type="application/rss+xml" title="{{ config.SITE_TITLE or _("Blog") }}" href="{{ url_for('rss', _external=True) }}" />
+{% block headers %}{% endblock %}
+	<script src="{{ url_for('static', filename='js/totop.js') }}"></script>
+</head>
+<body>
+	<header>
+		<nav class="container">
+			<ul class="nav">
+				{% set navigation_bar = [(url_for('home'), 'home', 'blog'), (url_for('about'), 'about', 'about')] %}
+				{% if g.user %}
+					{% do navigation_bar.append((url_for('logout', next=request.path),'login', 'logout')) %}
+				{% if g.user.can_write %}
+					{% do navigation_bar.append((url_for('new'), 'new', 'write')) %}
+				{% endif %}
+				{% else %}
+					{% do navigation_bar.append((url_for('login', next=request.path), 'login', 'login')) %}
+				{% endif %}
+					{% set active_page = active_page|default('home') %}
+				{% for href, id, caption in navigation_bar %}
+				<li>{% if id != active_page %}<a href="{{ href|e }}">{{ caption|e}}</a>{% else %}<span class="kostil">{{ caption|e}}</span>{% endif %}</li>
+				{% endfor %}
+				<a class="rss" data-icon="&#xe60c;" title="feed" href="{{ url_for('rss', _external=True) }}"></a>
+			</ul>
+		</nav>
+	</header>
+	<a class="to-top" data-icon="&#xe60e;" title="Наверх" href="#"></a>
+	<div class="container wrap">
+		{% block body %}{% endblock %}
+	</div>
+	<footer class="footer">
+		<div class="container">
+			{% block footer %}
+			<p class="powered">powered by <a href="http://flask.pocoo.org">Flask</a> {{ current_year }}</p>
+			{% endblock %}
+		</div>
+	</footer>
+</body>
+</html>

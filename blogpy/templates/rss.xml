@@ -1,0 +1,34 @@
+{% set time_format = "%a, %d %b %Y %H:%M:%S +0000" %}
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+<channel>
+  <title>{{ config.SITE_TITLE or _("Blog") }}</title>
+  <atom:link href="{{ url_for('rss', _external=True) }}" rel="self" type="application/rss+xml" />
+  <link>{{ url_for('home', _external=True) }}</link>
+  <lastBuildDate>{{ now.strftime(time_format) }}</lastBuildDate>
+  <description><![CDATA[{{ config.ABOUT|striptags|safe }}]]></description>
+  <sy:updatePeriod>hourly</sy:updatePeriod>
+  <sy:updateFrequency>3</sy:updateFrequency>
+{% for post in posts %}
+  <item>
+    <title>{{ post.title }}</title>
+    <link>{{ url_for('post', id=post.id, _external=True) }}</link>
+    <guid isPermaLink="true">{{ url_for('post', id=post.id, _external=True) }}</guid>
+    <pubDate>{{ post.published.strftime(time_format) }}</pubDate>
+    <description>
+      <![CDATA[{{ post.summary or post.body }}]]>
+    </description>
+    <comments>{{ url_for('post', id=post.id, _external=True) }}</comments>
+  </item>
+{% else %}
+  <item>
+    <title>{{ _("No any messages yet") }}</title>
+  </item>
+{% endfor%}
+</channel>
+</rss>

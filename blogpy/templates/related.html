@@ -1,0 +1,9 @@
+﻿<aside>
+<div class="syntax">
+{% for post in post.similar %}
+<a class="related" href="{{ url_for('post', id=post.id) }}">{{ post.title }}</a>
+{% else %}
+{{ _("No any messages yet") }}
+{% endfor %} 
+</div>
+</aside>

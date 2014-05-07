@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% set active_page = 'home' if not tag else 'tag_%s' % tag.id %}
+
+{% block title %}{% if tag %}{{ tag }}{% else %}{{ _("Main page") }}{% endif %}{% endblock %}
+
+{% block headers %}
+	<script src="{{ url_for('static', filename='js/jquery-1.9.0.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/youtube.js') }}"></script>
+{% endblock %} 
+
+{% from "_post.html" import render_post, render_pagination with context %}
+
+{% block body %}
+<section class="posts">
+{% for post in posts %}{{ render_post(post) }}{% else %}
+<article class="center">
+	<h1 class="title">{{ _("No any messages yet") }}</h1>
+</article>
+{% endfor %}
+</section>
+{% include "tags.html" %}
+{% endblock %}
+
+{% block footer %}
+	{{ render_pagination(pagination) }}
+	{{ super() }}
+{% endblock %}

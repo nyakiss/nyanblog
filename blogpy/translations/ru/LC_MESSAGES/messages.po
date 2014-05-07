@@ -1,0 +1,147 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2011 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2011-12-25 02:12+0200\n"
+"PO-Revision-Date: 2011-11-30 15:41+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: context.py:70
+#, python-format
+msgid "%(num)s day ago"
+msgid_plural "%(num)s days ago"
+msgstr[0] "%(num)s день назад"
+msgstr[1] "%(num)s дня назад"
+msgstr[2] "%(num)s дней назад"
+
+#: context.py:75
+#, python-format
+msgid "%(num)s hour ago"
+msgid_plural "%(num)s hours ago"
+msgstr[0] "%(num)s час назад"
+msgstr[1] "%(num)s часа назад"
+msgstr[2] "%(num)s часов назад"
+
+#: context.py:80
+#, python-format
+msgid "%(num)s minute ago"
+msgid_plural "%(num)s minutes ago"
+msgstr[0] "%(num)s минуту назад"
+msgstr[1] "%(num)s минуты назад"
+msgstr[2] "%(num)s минут назад"
+
+#: context.py:85
+#, python-format
+msgid "%(num)s second ago"
+msgid_plural "%(num)s seconds ago"
+msgstr[0] "%(num)s секунду назад"
+msgstr[1] "%(num)s секунды назад"
+msgstr[2] "%(num)s секунд назад"
+
+#: context.py:92
+msgid "just now"
+msgstr "только что"
+
+#: forms.py:23 templates/new.html:31
+msgid "Title"
+msgstr "Заголовок"
+
+#: forms.py:24 forms.py:29
+msgid "Text"
+msgstr "Текст"
+
+#: forms.py:25 templates/new.html:32
+msgid "Tags"
+msgstr "Теги"
+
+#: forms.py:30
+msgid "Field must be between 5 and 256 characters long."
+msgstr "Длина сообщения должна быть от 5 до 256 символов."
+
+#: templates/_post.html:16
+msgid "Read more"
+msgstr "Читать дальше"
+
+#: templates/_post.html:20
+msgid "Edit"
+msgstr "Изменить"
+
+#: templates/_post.html:21
+msgid "Delete"
+msgstr "Удалить"
+
+#: templates/_post.html:47
+msgid "Comment"
+msgstr "Комментарий"
+
+#: templates/_post.html:48
+msgid "Send"
+msgstr "Отправить"
+
+#: templates/_post.html:51
+msgid "You can't comment this post"
+msgstr "Вы не можете комментировать"
+
+#: templates/_post.html:55
+msgid "Login to comment this post"
+msgstr "Войдите, чтобы прокомментировать"
+
+#: templates/_post.html:65
+msgid "&laquo; Prev"
+msgstr "&laquo; Назад"
+
+#: templates/_post.html:80
+msgid "Next &raquo;"
+msgstr "Вперёд &raquo;"
+
+#: templates/about.html:5
+msgid "About"
+msgstr "Обо мне"
+
+#: templates/layout.html:2
+msgid "en"
+msgstr "ru"
+
+#: templates/layout.html:5
+msgid "Blog"
+msgstr "Блог"
+
+#: templates/list.html:6
+msgid "Main page"
+msgstr "Главная"
+
+#: templates/list.html:13
+msgid "No any messages yet"
+msgstr "Ещё нет никаких записей"
+
+#: templates/login.html:5
+msgid "Login"
+msgstr "Войти"
+
+#: templates/new.html:5
+msgid "New post"
+msgstr "Новый пост"
+
+#: templates/new.html:33
+msgid "Message"
+msgstr "Сообщение"
+
+#: templates/new.html:34
+msgid "Save"
+msgstr "Сохранить"
+
+#: templates/new.html:37
+msgid "Syntax documentation"
+msgstr "Документация по синтаксису"

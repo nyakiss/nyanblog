@@ -1,0 +1,142 @@
+# English translations for PROJECT.
+# Copyright (C) 2011 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2011-12-25 02:12+0200\n"
+"PO-Revision-Date: 2011-11-30 17:15+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: context.py:70
+#, python-format
+msgid "%(num)s day ago"
+msgid_plural "%(num)s days ago"
+msgstr[0] "%(num)s day ago"
+msgstr[1] "%(num)s days ago"
+
+#: context.py:75
+#, python-format
+msgid "%(num)s hour ago"
+msgid_plural "%(num)s hours ago"
+msgstr[0] "%(num)s hour ago"
+msgstr[1] "%(num)s hours ago"
+
+#: context.py:80
+#, python-format
+msgid "%(num)s minute ago"
+msgid_plural "%(num)s minutes ago"
+msgstr[0] "%(num)s minute ago"
+msgstr[1] "%(num)s minutes ago"
+
+#: context.py:85
+#, python-format
+msgid "%(num)s second ago"
+msgid_plural "%(num)s seconds ago"
+msgstr[0] "%(num)s second ago"
+msgstr[1] "%(num)s seconds ago"
+
+#: context.py:92
+msgid "just now"
+msgstr "just now"
+
+#: forms.py:23 templates/new.html:31
+msgid "Title"
+msgstr "Title"
+
+#: forms.py:24 forms.py:29
+msgid "Text"
+msgstr "Text"
+
+#: forms.py:25 templates/new.html:32
+msgid "Tags"
+msgstr "Tags"
+
+#: forms.py:30
+msgid "Field must be between 5 and 256 characters long."
+msgstr "Field must be between 5 and 256 characters long."
+
+#: templates/_post.html:16
+msgid "Read more"
+msgstr "Read more"
+
+#: templates/_post.html:20
+msgid "Edit"
+msgstr "Edit"
+
+#: templates/_post.html:21
+msgid "Delete"
+msgstr "Delete"
+
+#: templates/_post.html:47
+msgid "Comment"
+msgstr "Comment"
+
+#: templates/_post.html:48
+msgid "Send"
+msgstr "Send"
+
+#: templates/_post.html:51
+msgid "You can't comment this post"
+msgstr "You can't comment this post"
+
+#: templates/_post.html:55
+msgid "Login to comment this post"
+msgstr "Login to comment this post"
+
+#: templates/_post.html:65
+msgid "&laquo; Prev"
+msgstr "&laquo; Prev"
+
+#: templates/_post.html:80
+msgid "Next &raquo;"
+msgstr "Next &raquo;"
+
+#: templates/about.html:5
+msgid "About"
+msgstr "About"
+
+#: templates/layout.html:2
+msgid "en"
+msgstr "en"
+
+#: templates/layout.html:5
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/list.html:6
+msgid "Main page"
+msgstr "Main page"
+
+#: templates/list.html:13
+msgid "No any messages yet"
+msgstr "No any messages yet"
+
+#: templates/login.html:5
+msgid "Login"
+msgstr "Login"
+
+#: templates/new.html:5
+msgid "New post"
+msgstr "New post"
+
+#: templates/new.html:33
+msgid "Message"
+msgstr "Message"
+
+#: templates/new.html:34
+msgid "Save"
+msgstr "Save"
+
+#: templates/new.html:37
+msgid "Syntax documentation"
+msgstr "Syntax documentation"

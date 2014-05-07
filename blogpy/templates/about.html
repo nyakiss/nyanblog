@@ -1,0 +1,120 @@
+﻿{% extends "layout.html" %}
+
+{% set active_page = 'about' %}
+
+{% block title %}{{ _("About") }}{% endblock %}
+
+{% block headers %}
+<script src="{{ url_for('static', filename='js/jquery-1.9.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<section class="posts">
+	<ul id="tabs">
+		<li><a href="#" name="#tab1">Обо мне</a></li>
+		<li><a href="#" name="#tab2">Друзяшки</a></li>
+		<li><a href="#" name="#tab3">Связь</a></li>    
+	</ul>
+	<div id="content">
+		<div id="tab1">
+			<p>Привет всем, меня зовут някис.</p>
+			<p>Я обязательно доделаю эту страничку. Позже</p>
+		</div>
+		<div id="tab2">
+			<ul class="friends">
+				<li>
+					<img class="polaroid" src="/static/img/friends/error.png">
+					<a href="http://a404.ru/" class="name">error</a>
+					<p>поехавшая булка ;)</p>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/rozen.png">
+					<a href="http://steamcommunity.com/profiles/76561197998222446/" class="name">RozenRetard</a>
+					<p>ПОЕХАЛИ НА ЗАПРАВКУ</p>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/nekochan.png">
+					<a href="skype:nenenekokoko1" class="name">nekochan</a>
+					<p>его няша скоро всё поймёт</p>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/barafag.png">
+					<a href="xmpp:fdc@conference.xmpp.ru" class="name">barafag</a>
+					<p>а ведь у него и вправду 9 хвостов</p>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/nekofag.png">
+					<a href="skype:nekofag" class="name">nekofag</a>
+					<p>куда бегут котятки?</p>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/desudesudesu.png">
+					<a href="skype:jadeserndesu" class="name">desudesudesu</a>
+					<p>король коблстоуна</p>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/hanyuu39037.png">
+					<a href="skype:hanyuu39037" class="name">hanyuu39037</a>
+					<a class="n" href="http://prostopleer.com/tracks/4444580IbkC">роба роба полосатая</a>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/madobe.png">
+					<a href="http://vk.com/ma_nite" class="name">madobe</a>
+					<p>самая няшная цундере скайпача</p>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/_w.png">
+					<a href="skype:tcherepaska" class="name">_w</a>
+					<p>бездарный тупой уёбок</p>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/ekofag.png">
+					<a href="http://vk.com/the_last_ekonyan_of_vkontach" class="name">ekofag</a>
+					<p>Атлант разбил лицо ладонью.</p>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/tsukasa.png">
+					<a href="https://github.com/Misuzu/" class="name">tsukasa</a>
+					<p>ловушка в юбочке:3</p>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/pekahucoa.png">
+					<a href="http://search.cpan.org/~nyaknyan/" class="name">pekahucoa</a>
+					<p>КОКОКО</p>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/spok.png">
+					<a href="http://2--ch.ru/" class="name">spok</a>
+					<p>кококо да кококо</p>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/suigintou.png">
+					<a href="https://github.com/suigintou" class="name">suigintou</a>
+					<p>бананы в пижамах</p>
+				</li>
+				<li>
+					<img class="polaroid" src="/static/img/friends/tzeentch.png">
+					<a href="http://steamcommunity.com/profiles/76561197997243120/" class="name">tzeentch</a>
+					<p>котик :3</p>
+				</li>
+			</ul>
+		</div>
+		<div id="tab3">
+			<ul>
+				<li data-icon="&#xe60d;"><a href="skype:ru.nyakiss">skype</a></li>
+				<li data-icon="&#xe60f;"><a href="mailto:nyakiss@yandex.ru">mail</a></li>
+				<li class="jabber"><a href="xmpp:nyakiss@suwako.ru">@suwako.ru</a>/<a href="xmpp:nyakiss@hatate.ru">@hatate.ru</a></li>
+				<li data-icon="&#xe606;"><a href="https://vk.com/mistelteinn">vk</a></li>
+				<li data-icon="&#xe602;"><a href="https://twitter.com/nyakiss">twitter</a></li>
+				<li data-icon="&#xe605;"><a href="http://last.fm/user/nyakiss">last.fm</a></li>
+				<li data-icon="&#xe604;"><a href="https://github.com/nyakiss">github</a></li>
+				<li data-icon="&#xe600;"><a href="https://plus.google.com/105852349940681814194">google+</a></li>
+				<li data-icon="&#xe60b;"><a href="https://drive.google.com/folderview?id=0B5PTMRqpgBzrZzU0T0tYQkZjZFk&usp=sharing">google drive</a></li>
+				<li data-icon="&#xe603;"><a href="http://steamcommunity.com/id/mistelteinn">steam</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+{% include "R.html" %}
+{% endblock %}
