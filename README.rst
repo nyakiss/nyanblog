@@ -1,15 +1,15 @@
-blogpy
+nyanblog
 #########
 
-blogpy is a blog engine written in Python using Flask
+nyanblog is a blog engine written in Python using Flask
 
 Example installation
 --------------------
 ::
 
     cd /var/www
-    git clone git://github.com/kanski/blogpy.git
-    cd blogpy
+    git clone git://github.com/nyakiss/nyanblog.git
+    cd nyanblog
     wget https://raw.github.com/pypa/virtualenv/master/virtualenv.py
     python virtualenv.py pyenv
     source pyenv/bin/activate
@@ -28,13 +28,13 @@ nginx config
         server_name example.com;
 
         location = /favicon.ico {
-            root /var/www/blogpy/instance/static;
+            root /var/www/nyanblog/instance/static;
         }
         location /static {
-            root /var/www/blogpy/instance;
+            root /var/www/nyanblog/instance;
         }
         location /uploads {
-            root /var/www/blogpy/instance;
+            root /var/www/nyanblog/instance;
         }
         location / {
             include uwsgi_params;
@@ -47,10 +47,10 @@ uWSGI config
 ::
 
     [uwsgi]
-    chdir = /var/www/blogpy
-    pythonpath = /var/www/blogpy
-    virtualenv = /var/www/blogpy/pyenv
+    chdir = /var/www/nyanblog
+    pythonpath = /var/www/nyanblog
+    virtualenv = /var/www/nyanblog/pyenv
     module = application
-    touch-reload = /var/www/blogpy/instance/settings.cfg
+    touch-reload = /var/www/nyanblog/instance/settings.cfg
     socket = 127.0.0.1:3030
     processes = 2

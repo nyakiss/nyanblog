@@ -6,35 +6,11 @@
 {% block headers %}
 <script src="{{ url_for('static', filename='js/jquery-1.9.0.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-<script type="text/javascript">
-//<![CDATA[
-$(function() {
-	$("form.compose").submit(function() {
-	var required = ["text", "tags"];
-	var form = $(this).get(0);
-	for (var i = 0; i < required.length; i++) {
-		if (!form[required[i]].value) {
-			$(form[required[i]]).select();
-			return false;
-		};
-	};
-	return true;
-	});
-	$(".audio").click(function() { surroundSelection($("textarea").get(0),
-	'<audio src=', ' controls>'+
-		'Ваш браузер протух.'+
-	'</audio>'
-	); });
-});
-//]]>
-</script>
 {% endblock %}
 
 {% block body %}
 <section class="posts">
 <div class="editor">
-	<a class="edit bolder">Жирный</a>
-	<a class="edit audio">Аудио</a>
 	<form class="upload" method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data">
 		<input type="file" name="file">
 		<input calss="btn" type="submit" value="Загрузить">

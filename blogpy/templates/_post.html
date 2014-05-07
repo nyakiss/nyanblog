@@ -2,13 +2,11 @@
 {% macro render_post(post, full=False) %}
 <article class="post" id="{{ 'post_%s' % post.id }}">
 	<div class="post-header">
-		<a  itemprop="title" class="title" href="{{ url_for('post', id=post.id) }}">
 {% if full %}
-{{ post.title }}
+<h1 class="title">{{ post.title }}</h1>
 {% else %}
-			<h1>{{ post.title }}</h1>
-{% endif %}
-		</a>
+<h1 class="title"><a  itemprop="title" href="{{ url_for('post', id=post.id) }}">{{ post.title }}</a></h1>
+{% endif %}	
 {% if g.user and g.user.can_write %}
 		<div class="admin-bar">
 			<a class="edit" data-icon="&#xe601;" title="редактировать сообщение" href="{{ url_for('edit', id=post.id) }}"></a>
@@ -49,7 +47,7 @@
 	<img class="polaroid" alt="{{ comment.author }}" src="{{ comment.author.avatar() }}">
 	<div class="comment-wrap">
 		<div class="comment-header">
-			<p itemprop="nickname" class="comment-name">{{ comment.author }}:</p>
+			<p class="comment-name">{{ comment.author }}:</p>
 			{% if g.user and g.user.can_write %}
 			<div class="admin-bar">
 				<a class="edit" data-icon="&#xe609;" title="удалить коментарий" href="{{ url_for('delete', id=comment.id, type='comment') }}?next={{ request.path }}"></a>
