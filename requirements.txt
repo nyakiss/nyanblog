@@ -1,3 +1,4 @@
+uwsgi
 Flask
 Flask-Babel
 Flask-Cache

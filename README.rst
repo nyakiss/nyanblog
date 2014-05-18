@@ -3,22 +3,26 @@ nyanblog
 
 nyanblog is a blog engine written in Python using Flask
 
-Example installation
+Example installation on mysql
 --------------------
 ::
 
     cd /var/www
     git clone git://github.com/nyakiss/nyanblog.git
     cd nyanblog
-    apt-get install  uwsgi-plugin-python python-virtualenv mysql-server mysql-client libmysqlclient-dev
+    apt-get install python-dev uwsgi-plugin-python python-virtualenv mysql-server mysql-client libmysqlclient-dev
     virtualenv pyenv
     source pyenv/bin/activate
     pip install -r requirements.txt
     python manage.py createinstance
     nano instance/settings.cfg
+    mysql -u root -p
+		CREATE DATABASE blogpy_db CHARACTER SET utf8;
+		CREATE USER blogpy_user@localhost IDENTIFIED BY 'blogpy_passwd';
+		GRANT ALL ON blogpy_user.* TO blogpy_user@localhost;
+		GRANT ALL ON blogpy_db.* TO blogpy_user@localhost;
     python manage.py createdb
     python manage.py addadmin -e admin@example.com
-    python manage.py runserver
 
 nginx config
 ------------
