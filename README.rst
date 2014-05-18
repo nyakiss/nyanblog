@@ -10,8 +10,8 @@ Example installation
     cd /var/www
     git clone git://github.com/nyakiss/nyanblog.git
     cd nyanblog
-	apt-get install  uwsgi-plugin-python python-virtualenv mysql-server mysql-client libmysqlclient-dev
-	virtualenv pyenv
+    apt-get install  uwsgi-plugin-python python-virtualenv mysql-server mysql-client libmysqlclient-dev
+    virtualenv pyenv
     source pyenv/bin/activate
     pip install -r requirements.txt
     python manage.py createinstance
