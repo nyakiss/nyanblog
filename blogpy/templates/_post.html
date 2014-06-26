@@ -9,8 +9,8 @@
 {% endif %}	
 {% if g.user and g.user.can_write %}
 		<div class="admin-bar">
-			<a class="edit" data-icon="&#xe601;" title="редактировать сообщение" href="{{ url_for('edit', id=post.id) }}"></a>
-			<a class="edit" data-icon="&#xe609;" title="удалить сообщение" href="{{ url_for('delete', id=post.id, type='post') }}{% if not full %}?next={{ request.path }}{% endif %}"></a>
+			<a class="edit" data-icon="&#xe600;" title="редактировать сообщение" href="{{ url_for('edit', id=post.id) }}"></a>
+			<a class="edit" data-icon="&#xe603;" title="удалить сообщение" href="{{ url_for('delete', id=post.id, type='post') }}{% if not full %}?next={{ request.path }}{% endif %}"></a>
 		</div>
 {% endif %}
 	</div>
@@ -22,8 +22,8 @@
 {% endif %}
 	</div>
 	<div class="post-footer">
-		<div class="tags" data-icon="&#xe607;">{{ post|render_tags(delimiter=' ') }}</div>
-		<a class="post-comments" data-icon="&#xe608;" href="{{ url_for('post', id=post.id) }}">{{ post.comment_count }}</a>
+		<div class="tags" data-icon="&#xe601;">{{ post|render_tags(delimiter=' ') }}</div>
+		<a class="post-comments" data-icon="&#xe602;" href="{{ url_for('post', id=post.id) }}">{{ post.comment_count }}</a>
 		<span itemprop="published" class="date" title="{{ post.published|format_datetime(time_format) }}">{{ post.published|timesince(time_format) }}</span>
 	</div>
 </article>
@@ -50,7 +50,7 @@
 			<p class="comment-name">{{ comment.author }}:</p>
 			{% if g.user and g.user.can_write %}
 			<div class="admin-bar">
-				<a class="edit" data-icon="&#xe609;" title="удалить коментарий" href="{{ url_for('delete', id=comment.id, type='comment') }}?next={{ request.path }}"></a>
+				<a class="edit" data-icon="&#xe603;" title="удалить коментарий" href="{{ url_for('delete', id=comment.id, type='comment') }}?next={{ request.path }}"></a>
 			</div>
 			{% endif %}
 		</div>

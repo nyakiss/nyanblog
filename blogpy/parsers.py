@@ -80,7 +80,7 @@ class Youtube(Directive):
         if not self.arguments:
             return None
         result = ('<div id="%(yid)s" class="youtube-preview" ' +
-                'style="background: url(http://img.youtube.com/vi/%(yid)s/0.jpg) no-repeat scroll 0 -55px"><span class="y-play" data-icon="&#xe60a;"></span></div>'
+                'style="background: url(http://img.youtube.com/vi/%(yid)s/0.jpg) no-repeat scroll 0 -55px"><span class="y-play" data-icon="&#xe608;"></span></div>'
                 ) % dict(yid=self.arguments[0])
         return [nodes.raw('', result, format='html')]
 

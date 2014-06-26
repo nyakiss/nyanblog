@@ -27,11 +27,11 @@
 				{% for href, id, caption in navigation_bar %}
 				<li>{% if id != active_page %}<a href="{{ href|e }}">{{ caption|e}}</a>{% else %}<span class="kostil">{{ caption|e}}</span>{% endif %}</li>
 				{% endfor %}
-				<a class="rss" data-icon="&#xe60c;" title="feed" href="{{ url_for('rss', _external=True) }}"></a>
+				<a class="rss" data-icon="&#xe607;" title="feed" href="{{ url_for('rss', _external=True) }}"></a>
 			</ul>
 		</nav>
 	</header>
-	<a class="to-top" data-icon="&#xe60e;" title="Наверх" href="#"></a>
+	<a class="to-top" data-icon="&#xe614;" title="Наверх" href="#"></a>
 	<div class="container wrap">
 		{% block body %}{% endblock %}
 	</div>
